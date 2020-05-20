@@ -27,15 +27,7 @@ for k = 1:heigth
             r2 = j+w;
             c1 = i-w;
             c2 = i+w;
-            k1 = k-1;
-            k2 = k+1;
             % Verification process for cells close to the borders
-            if k-1 < 1
-                k1 = 1;
-            end
-            if k+1 > heigth
-                k2 = heigth;
-            end
             if i-w < 1
                 c1 = 1;
             end
@@ -49,7 +41,7 @@ for k = 1:heigth
                 r2 = rows;
             end
             % Definition of the the elements based of the mean of the previous ones
-            summa = img(r1:r2,c1:c2,k1:k2);
+            summa = img(r1:r2,c1:c2,k);
             [rows2, columns2] = size(summa);
             result = rows2*columns2;
             prom = sum(sum(sum(summa)))/result;
